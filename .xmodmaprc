@@ -1,0 +1,3 @@
+! Remap Caps Lock to Windows key
+remove Lock = Caps_Lock
+keysym Caps_Lock = Super_L

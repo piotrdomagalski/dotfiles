@@ -1,0 +1,45 @@
+general {
+	output_format = i3bar
+
+	colors = true
+	interval = 2
+
+	# Solarized green, yellow and red colors.
+	color_good = "#859900"
+	color_degraded = "#b58900"
+	color_bad = "#dc322f"
+}
+
+order += "wireless wlan0"
+order += "ethernet eth0"
+order += "ipv6"
+order += "cpu_usage"
+order += "battery 0"
+order += "time"
+
+wireless wlan0 {
+	format_up = "W: (%quality at %essid) %ip"
+	format_down = "W: down"
+}
+
+ethernet eth0 {
+	format_up = "E: %ip"
+	format_down = "E: down"
+}
+
+ipv6 {
+	format_up = "%ip"
+	format_down = "no IPv6"
+}
+
+cpu_usage {
+	format = "CPU: %usage"
+}
+
+battery 0 {
+	format = "%status %percentage %remaining %consumption"
+}
+
+time {
+	format = "%b %d %H:%M"
+}

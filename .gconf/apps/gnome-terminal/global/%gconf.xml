@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="use_mnemonics" mtime="1345814418" type="bool" value="true"/>
+	<entry name="use_menu_accelerators" mtime="1345814417" type="bool" value="true"/>
+	<entry name="default_profile" mtime="1345645261" type="string">
+		<stringvalue>Default</stringvalue>
+	</entry>
+	<entry name="profile_list" mtime="1345645261" type="list" ltype="string">
+		<li type="string">
+			<stringvalue>Default</stringvalue>
+		</li>
+		<li type="string">
+			<stringvalue>Profile0</stringvalue>
+		</li>
+	</entry>
+</gconf>

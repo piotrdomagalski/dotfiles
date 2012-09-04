@@ -1,0 +1,7 @@
+[user]
+	name = Piotr Domagalski
+	email = piotr@domagalski.com
+[color]
+	ui = true
+[svn]
+	rmdir = true
