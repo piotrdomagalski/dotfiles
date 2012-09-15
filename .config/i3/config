@@ -4,12 +4,13 @@ font xft:Inconsolata 10
 
 floating_modifier $mod
 
-bindsym $mod+Return exec --no-startup-id gnome-terminal
+bindsym $mod+Return exec --no-startup-id urxvt
+bindsym $mod+Shift+apostrophe exec --no-startup-id gnome-terminal
 bindsym $mod+Shift+Return exec --no-startup-id gnome-terminal --profile=Tango
 
-bindsym $mod+Shift+q kill
+bindsym $mod+d exec --no-startup-id dmenu_run -fn "Inconsolata-16" -p "Run: "
 
-bindsym $mod+d exec --no-startup-id dmenu_run -fn "xft:Inconsolata:size=12" -p "Run: "
+bindsym $mod+Shift+q kill
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -60,10 +61,11 @@ workspace 7 output DP-0
 workspace 8 output DP-0
 workspace 9 output DP-0
 
-workspace_auto_back_and_forth yes
-
 bindsym $mod+comma focus output left
 bindsym $mod+period focus output right
+
+bindsym $mod+shift+comma move output left
+bindsym $mod+shift+period move output right
 
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
@@ -110,15 +112,16 @@ bindsym $mod+r mode "resize"
 
 bar {
 	tray_output LVDS-0
-        status_command ~/projects/i3status/i3status
+        status_command i3status
 	font xft:Inconsolata 9
 	colors {
-		statusline #eee8d5
+		statusline #93a1a1
 	}
 }
 
+bindsym $mod+b exec --no-startup-id xset dpms force off
 bindsym $mod+c exec chromium
-bindsym $mod+n exec nautilus --no-desktop
+bindsym $mod+n exec --no-startup-id nautilus --no-desktop
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 5+ unmute
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 5- unmute
@@ -133,11 +136,10 @@ for_window [class="^Skype$"] floating enable
 
 # Solarized green
 # class                 border  backgr. text    indicator
-#client.focused          #dc322f #dc322f #ffffff #dc322f
 client.focused          #859900 #859900 #ffffff #859900
 
 ipc-socket ~/.i3-socket
 
 # Autostart
-exec --no-startup-id nm-applet --sm-client-disable &
-exec --no-startup-id i3-msg focus output left
+exec --no-startup-id nm-applet
+#exec --no-startup-id i3-msg focus output left

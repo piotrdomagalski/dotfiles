@@ -2,12 +2,27 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 call pathogen#helptags()
 
+let g:Powerline_symbols = 'fancy'
+
+let g:clang_use_library = 1
+
+" SuperTab option for context aware completion
+let g:SuperTabDefaultCompletionType = "context"
+
+" Disable auto popup, use <Tab> to autocomplete
+let g:clang_complete_auto = 0
+" Show clang errors in the quickfix window
+let g:clang_complete_copen = 1
+
 set nocompatible
 filetype plugin indent on
 syntax on
 set number
 
+"set undofile
+
 " Solarized theme
+"let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
 
@@ -41,3 +56,5 @@ if has("gui_running")
 		set guifont=Inconsolata\ 12
 	endif
 endif
+
+nnoremap <F5> :GundoToggle<CR>

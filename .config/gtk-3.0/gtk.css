@@ -1,7 +1,13 @@
+# Disable key shortcuts in gnome-terminal.
+
 @binding-set NoKeyboardNavigation {
 	unbind "<shift>F10"
 }
 
 * {
 	gtk-key-bindings: NoKeyboardNavigation
+}
+
+.menu {
+	border: 1px solid gray;
 }

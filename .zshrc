@@ -21,7 +21,7 @@ eval `dircolors ~/.dircolors`
 export PATH=$PATH:$HOME/bin
 
 export EDITOR=vim
-export TERMINAL=gnome-terminal
+export TERMINAL=urxvt
 export BROWSER=chromium
 
 if [ "$COLORTERM" = "gnome-terminal" -a -z "$TMUX" ]; then
@@ -39,3 +39,17 @@ alias vb='cd ~/wrk/vitrall-build/clang'
 
 alias svim='sudo vim'
 alias c='clear'
+
+alias ve='vim ~/.vimrc'
+
+alias m='make'
+alias m3='make -j3'
+
+export OSG_DIR=/usr/local/OpenSceneGraph-svn
+export PATH=$PATH:/usr/local/OpenSceneGraph-svn/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/OpenSceneGraph-svn/lib64
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/boost/lib
+
+bindkey "^[[1~" beginning-of-line
+bindkey "^[[4~" end-of-line
