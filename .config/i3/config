@@ -5,8 +5,10 @@ font xft:Inconsolata 10
 floating_modifier $mod
 
 bindsym $mod+Return exec --no-startup-id urxvt
-bindsym $mod+Shift+apostrophe exec --no-startup-id gnome-terminal
-bindsym $mod+Shift+Return exec --no-startup-id gnome-terminal --profile=Tango
+bindsym $mod+Shift+Return exec --no-startup-id /home/szalik/bin/urxvt-tango.sh
+
+bindsym $mod+apostrophe exec --no-startup-id gnome-terminal
+bindsym $mod+Shift+apostrophe exec --no-startup-id gnome-terminal --profile=Tango
 
 bindsym $mod+d exec --no-startup-id dmenu_run -fn "Inconsolata-16" -p "Run: "
 
@@ -95,14 +97,15 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exit
 
 mode "resize" {
-        bindsym h resize shrink width 5 px or 5 ppt
-        bindsym Left resize shrink width 5 px or 5 ppt
-        bindsym j resize grow height 5 px or 5 ppt
-        bindsym Down resize grow height 5 px or 5 ppt
-        bindsym k resize shrink height 5 px or 5 ppt
-        bindsym Up resize shrink height 5 px or 5 ppt
-        bindsym l resize grow width 5 px or 5 ppt
-        bindsym Right resize grow width 5 px or 5 ppt
+        bindsym j           resize shrink width 10 px or 10 ppt
+        bindsym k           resize grow height 10 px or 10 ppt
+        bindsym l           resize shrink height 10 px or 10 ppt
+        bindsym semicolon   resize grow width 10 px or 10 ppt
+
+        bindsym Left        resize shrink width 10 px or 10 ppt
+        bindsym Down        resize grow height 10 px or 10 ppt
+        bindsym Up          resize shrink height 10 px or 10 ppt
+        bindsym Right       resize grow width 10 px or 10 ppt
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -119,14 +122,15 @@ bar {
 	}
 }
 
-bindsym $mod+b exec --no-startup-id xset dpms force off
 bindsym $mod+c exec chromium
+bindsym --release $mod+b exec --no-startup-id sleep 0.25 && xset dpms force off
 bindsym $mod+n exec --no-startup-id nautilus --no-desktop
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 5+ unmute
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 5- unmute
 bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
-bindsym XF86ScreenSaver exec --no-startup-id i3lock -i ~/.theme/wallpaper-1600x900.png -c 222222
+
+bindsym --release XF86ScreenSaver exec --no-startup-id i3lock -i ~/.theme/wallpaper-1600x900.png -c 222222 && sleep 0.25 && xset dpms force off
 
 new_window 1pixel
 focus_follows_mouse no

@@ -36,12 +36,9 @@ alias clangcmake="CC='clang -Qunused-arguments -fcolor-diagnostics' CXX='clang++
 
 alias vs='cd ~/wrk/vitrall/server'
 alias vb='cd ~/wrk/vitrall-build/clang'
-
 alias svim='sudo vim'
 alias c='clear'
-
 alias ve='vim ~/.vimrc'
-
 alias m='make'
 alias m3='make -j3'
 

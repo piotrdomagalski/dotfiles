@@ -21,10 +21,10 @@ set number
 
 "set undofile
 
-" Solarized theme
-"let g:solarized_termcolors=256
-set background=dark
-colorscheme solarized
+if empty($NO_SOLARIZED_COLORS)
+	set background=dark
+	colorscheme solarized
+endif
 
 " Highlight trailing whitespace and lines longer than 80 columns.
 highlight LongLine ctermbg=DarkYellow guibg=DarkYellow
@@ -50,6 +50,7 @@ set laststatus=2
 set nowrap
 set modeline
 set tw=100
+set ttyfast
 
 if has("gui_running")
 	if has("gui_gtk2")

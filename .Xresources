@@ -1,29 +1,37 @@
 ! Set cursor theme.
-Xcursor.theme: Adwaita
+Xcursor.theme:			Adwaita
 
 ! Disable cursor blinking.
-*blinkRate: 0
+*blinkRate:			0
 
 ! Urxvt settings.
-URxvt.urgentOnBell:         true
-URxvt.saveLines:            16384
-URxvt.internalBorder:       1
-URxvt.scrollBar:            false
-URxvt.cursorBlink:          false
-URxvt.pointerBlank:         true
-URxvt.pointerBlankDelay:    1
-URxvt.font:                 xft:Inconsolata:pixelsize=16
-URxvt.boldFont:             xft:Inconsolata:pixelsize=16
-URxvt.fading:               0
+URxvt.termName:			screen-256color
+URxvt.urgentOnBell:		true
+URxvt.saveLines:		32768
+URxvt.internalBorder:		1
+URxvt.scrollBar:		false
+URxvt.scrollTtyOutput:		false
+URxvt.scrollWithBuffer:		true
+URxvt.scrollTtyKeypress:	true
+URxvt.cursorBlink:		false
+URxvt.pointerBlank:		true
+URxvt.pointerBlankDelay:	1
+URxvt.font:			xft:Inconsolata:pixelsize=16
+URxvt.boldFont:			xft:Inconsolata:pixelsize=16
+URxvt.fading:			0
+
+! Unbreak zsh keys in urxvt.
+URxvt.keysym.Home:		\033[1~
+URxvt.keysym.End:		\033[4~
 
 ! Fix urxvt font spacing. Not needed with rxvt-unicode-patched from AUR.
-URxvt.letterSpace:          -1
+URxvt.letterSpace:		-1
 
 ! Urxvt perl extensions.
-URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select
-URxvt.url-select.launcher:  chromium
-URxvt.url-select.underline: false
-URxvt.matcher.button:       1
+URxvt.perl-ext-common:		default,url-select
+URxvt.url-select.launcher:	xdg-open
+URxvt.url-select.underline:	false
+URxvt.url-select.button:	1
 
 !! drop in Solarized colorscheme for Xresources
 !!

@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <gconf>
-	<entry name="custom_command" mtime="1347748589" type="string">
+	<entry name="custom_command" mtime="1347798696" type="string">
 		<stringvalue>tmux</stringvalue>
 	</entry>
-	<entry name="cursor_blink_mode" mtime="1347748589" type="string">
+	<entry name="cursor_blink_mode" mtime="1347798696" type="string">
 		<stringvalue>off</stringvalue>
 	</entry>
 	<entry name="scroll_on_output" mtime="1346744147" type="bool" value="false"/>
@@ -11,7 +11,7 @@
 	<entry name="cursor_shape" mtime="1346757666" type="string">
 		<stringvalue>block</stringvalue>
 	</entry>
-	<entry name="scrollback_lines" mtime="1347748589" type="int" value="32768"/>
+	<entry name="scrollback_lines" mtime="1347798696" type="int" value="32768"/>
 	<entry name="backspace_binding" mtime="1345567343" type="string">
 		<stringvalue>ascii-del</stringvalue>
 	</entry>
@@ -19,35 +19,35 @@
 		<stringvalue>escape-sequence</stringvalue>
 	</entry>
 	<entry name="use_custom_command" mtime="1346758961" type="bool" value="false"/>
-	<entry name="default_show_menubar" mtime="1347748589" type="bool" value="false"/>
-	<entry name="allow_bold" mtime="1347748589" type="bool" value="false"/>
-	<entry name="scrollbar_position" mtime="1347748589" type="string">
+	<entry name="default_show_menubar" mtime="1347798696" type="bool" value="false"/>
+	<entry name="allow_bold" mtime="1347798696" type="bool" value="false"/>
+	<entry name="scrollbar_position" mtime="1347798696" type="string">
 		<stringvalue>hidden</stringvalue>
 	</entry>
-	<entry name="silent_bell" mtime="1347748589" type="bool" value="true"/>
-	<entry name="background_darkness" mtime="1347748589" type="float" value="0.2600570023059845"/>
+	<entry name="silent_bell" mtime="1347798696" type="bool" value="true"/>
+	<entry name="background_darkness" mtime="1347798696" type="float" value="0.2600570023059845"/>
 	<entry name="background_type" mtime="1347527483" type="string">
 		<stringvalue>solid</stringvalue>
 	</entry>
-	<entry name="bold_color_same_as_fg" mtime="1347748589" type="bool" value="false"/>
-	<entry name="font" mtime="1347748589" type="string">
+	<entry name="bold_color_same_as_fg" mtime="1347798696" type="bool" value="false"/>
+	<entry name="font" mtime="1347798696" type="string">
 		<stringvalue>Inconsolata 12</stringvalue>
 	</entry>
-	<entry name="use_system_font" mtime="1347748589" type="bool" value="false"/>
-	<entry name="use_theme_colors" mtime="1347748589" type="bool" value="false"/>
-	<entry name="palette" mtime="1347748589" type="string">
+	<entry name="use_system_font" mtime="1347798696" type="bool" value="false"/>
+	<entry name="use_theme_colors" mtime="1347798696" type="bool" value="false"/>
+	<entry name="palette" mtime="1347798696" type="string">
 		<stringvalue>#070736364242:#DCDC32322F2F:#858599990000:#B5B589890000:#26268B8BD2D2:#D3D336368282:#2A2AA1A19898:#EEEEE8E8D5D5:#00002B2B3636:#CBCB4B4B1616:#58586E6E7575:#65657B7B8383:#838394949696:#6C6C7171C4C4:#9393A1A1A1A1:#FDFDF6F6E3E3</stringvalue>
 	</entry>
-	<entry name="background_color" mtime="1347748589" type="string">
+	<entry name="background_color" mtime="1347798696" type="string">
 		<stringvalue>#00002B2B3636</stringvalue>
 	</entry>
-	<entry name="visible_name" mtime="1347748589" type="string">
+	<entry name="visible_name" mtime="1347798696" type="string">
 		<stringvalue>Solarized</stringvalue>
 	</entry>
-	<entry name="bold_color" mtime="1347748589" type="string">
+	<entry name="bold_color" mtime="1347798696" type="string">
 		<stringvalue>#9393A1A1A1A1</stringvalue>
 	</entry>
-	<entry name="foreground_color" mtime="1347748589" type="string">
+	<entry name="foreground_color" mtime="1347798696" type="string">
 		<stringvalue>#838394949696</stringvalue>
 	</entry>
 </gconf>
