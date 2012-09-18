@@ -1,5 +1,3 @@
-# Disable key shortcuts in gnome-terminal.
-
 @binding-set NoKeyboardNavigation {
 	unbind "<shift>F10"
 }

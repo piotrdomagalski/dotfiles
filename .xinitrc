@@ -36,5 +36,6 @@ nvidia-settings --load-config-only
 #nvidia-settings -a InitialPixmapPlacement=0
 
 I3=i3
-#I3=~/projects/i3/i3
+I3=~/projects/i3/i3
+export PATH=~/projects/i3/i3bar:$PATH
 exec $I3 -V > /tmp/i3.log 2>&1

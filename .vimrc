@@ -51,6 +51,7 @@ set nowrap
 set modeline
 set tw=100
 set ttyfast
+set mouse=a
 
 if has("gui_running")
 	if has("gui_gtk2")
@@ -59,3 +60,5 @@ if has("gui_running")
 endif
 
 nnoremap <F5> :GundoToggle<CR>
+
+autocmd VimEnter,VimLeave * silent !tmux set status
