@@ -1,11 +1,5 @@
-@binding-set NoKeyboardNavigation {
-	unbind "<shift>F10"
-}
-
-* {
-	gtk-key-bindings: NoKeyboardNavigation
-}
-
+/*
 .menu {
 	border: 1px solid gray;
 }
+*/

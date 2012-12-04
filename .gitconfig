@@ -5,3 +5,5 @@
 	ui = true
 [svn]
 	rmdir = true
+[push]
+	default = simple

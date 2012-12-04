@@ -1,7 +1,8 @@
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=20000
-SAVEHIST=20000
+HISTSIZE=50000
+SAVEHIST=50000
+setopt SHARE_HISTORY
 setopt autocd extendedglob notify
 unsetopt beep
 bindkey -e
@@ -50,3 +51,15 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/boost/lib
 
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
+
+export PATH=$HOME/scripts:$PATH
+
+export CHROMIUM_USER_FLAGS="--password-store=gnome --ignore-gpu-blacklist"
+
+# Speed up VirtualGL buffer reading
+export VGL_READBACK=PBO
+
+#export WORKON_HOME=$HOME/.virtualenvs
+#export VIRTUALENVWRAPPER_VIRTUALENV=virtualenv2
+#export PROJECT_HOME=$HOME/wrk/py
+#. /usr/bin/virtualenvwrapper.sh

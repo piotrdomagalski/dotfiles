@@ -62,3 +62,9 @@ endif
 nnoremap <F5> :GundoToggle<CR>
 
 autocmd VimEnter,VimLeave * silent !tmux set status
+
+" Disable beeps
+set noerrorbells visualbell t_vb=
+if has('autocmd')
+	autocmd GUIEnter * set visualbell t_vb=
+endif

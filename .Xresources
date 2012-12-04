@@ -5,7 +5,7 @@ Xcursor.theme:			Adwaita
 *blinkRate:			0
 
 ! Urxvt settings.
-!URxvt.termName:			screen-256color
+URxvt.termName:		screen-256color
 URxvt.urgentOnBell:		true
 URxvt.saveLines:		32768
 URxvt.internalBorder:		1
@@ -15,7 +15,7 @@ URxvt.scrollWithBuffer:		true
 URxvt.scrollTtyKeypress:	true
 URxvt.cursorBlink:		false
 URxvt.pointerBlank:		true
-URxvt.pointerBlankDelay:	1
+URxvt.pointerBlankDelay:	3
 URxvt.font:			xft:Inconsolata:pixelsize=16
 URxvt.boldFont:			xft:Inconsolata:pixelsize=16
 URxvt.fading:			0

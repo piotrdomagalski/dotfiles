@@ -1,16 +1,20 @@
 set $mod Mod4
 
+set $internal_screen LVDS-0
+set $external_screen DP-0
+
 font xft:Inconsolata 10
 
 floating_modifier $mod
 
 bindsym $mod+Return exec --no-startup-id urxvt
-bindsym $mod+Shift+Return exec --no-startup-id /home/szalik/bin/urxvt-tango.sh
+bindsym $mod+Shift+Return exec --no-startup-id /home/szalik/scripts/urxvt-tango.sh
 
 bindsym $mod+apostrophe exec --no-startup-id gnome-terminal
 bindsym $mod+Shift+apostrophe exec --no-startup-id gnome-terminal --profile=Tango
 
-bindsym $mod+d exec --no-startup-id dmenu_run -fn "Inconsolata-16" -p "Run: "
+bindsym $mod+d exec --no-startup-id dmenu_run -p "Run: "
+bindsym $mod+Shift+d exec --no-startup-id ~/.i3/winmenu.py
 
 bindsym $mod+Shift+q kill
 
@@ -56,15 +60,17 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 bindsym $mod+z focus child
 
-workspace 1 output LVDS-0
-workspace 2 output LVDS-0
-workspace 3 output LVDS-0
-workspace 4 output LVDS-0
-workspace 5 output DP-0
-workspace 6 output DP-0
-workspace 7 output DP-0
-workspace 8 output DP-0
-workspace 9 output DP-0
+workspace 1 output $internal_screen
+workspace 2 output $internal_screen
+workspace 3 output $internal_screen
+workspace 4 output $internal_screen
+workspace 5 output $external_screen
+workspace 6 output $external_screen
+workspace 7 output $external_screen
+workspace 8 output $external_screen
+workspace 9 output $external_screen
+
+workspace_auto_back_and_forth yes
 
 bindsym $mod+comma focus output left
 bindsym $mod+period focus output right
@@ -84,6 +90,7 @@ bindsym $mod+9 workspace 9
 
 bindsym $mod+Shift+0 move scratchpad
 bindsym $mod+0 scratchpad show
+bindsym $mod+o exec --no-startup-id ~/.i3/scratcher.py
 
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
@@ -117,23 +124,25 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bar {
-	tray_output LVDS-0
+	tray_output $internal_screen
         status_command i3status
 	font xft:Inconsolata 9
 	colors {
+		background #000000
 		statusline #93a1a1
 	}
 }
 
 bindsym $mod+c exec chromium
-bindsym --release $mod+b exec --no-startup-id sleep 0.25 && xset dpms force off
-bindsym $mod+n exec --no-startup-id nautilus --no-desktop
+bindsym $mod+b exec --no-startup-id sleep 0.25 && xset dpms force off
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 5+ unmute
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 5- unmute
 bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
 
-bindsym --release XF86ScreenSaver exec --no-startup-id i3lock -i ~/.theme/wallpaper-1600x900.png -c 222222
+bindsym XF86Display exec --no-startup-id /home/szalik/scripts/toggle-display-port.sh $internal_screen $external_screen
+
+bindsym XF86ScreenSaver exec --no-startup-id i3lock -i ~/.theme/wallpaper-1600x900.png -c 222222
 
 new_window 1pixel
 focus_follows_mouse no
@@ -141,12 +150,17 @@ focus_follows_mouse no
 for_window [class="^Pidgin$" window_role="^buddy_list$"] floating enable
 for_window [class="^Skype$"] floating enable
 
-# Solarized green
 # class                 border  backgr. text    indicator
+# TODO check
 client.focused          #859900 #859900 #ffffff #859900
+#client.focused_inactive #333333 #5f676a #ffffff #484e50
+#client.unfocused        #333333 #222222 #ffffff #292d2e
+#client.urgent           #dc322f #dc322f #ffffff #dc322f
 
 ipc-socket ~/.i3-socket
 
+exec --no-startup-id wmname LG3D
+
 # Autostart
 exec --no-startup-id nm-applet
-exec --no-startup-id i3-msg focus output left
+exec --no-startup-id i3 focus output left

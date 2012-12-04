@@ -22,9 +22,6 @@
 [submodule "external/dircolors-solarized"]
 	path = external/dircolors-solarized
 	url = git://github.com/seebi/dircolors-solarized.git
-[submodule "external/tmux-powerline"]
-	path = external/tmux-powerline
-	url = git://github.com/erikw/tmux-powerline.git
 [submodule ".vim/bundle/vim-surround"]
 	path = .vim/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
