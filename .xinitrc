@@ -20,7 +20,7 @@ feh --bg-scale ~/.theme/wallpaper.jpg
 
 #compton -c -l -5 -t -5 -r 5 -o 0.3 -C -G -b
 
-xset b off s off dpms 0 0 300
+xset b off s off dpms 0 0 600
 xautolock -time 15 -locker 'i3lock -i ~/.theme/wallpaper-1600x900.png -c 222222' &
 #unclutter -idle 3 &
 

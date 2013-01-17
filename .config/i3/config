@@ -8,7 +8,7 @@ font xft:Inconsolata 10
 floating_modifier $mod
 
 bindsym $mod+Return exec --no-startup-id urxvt
-bindsym $mod+Shift+Return exec --no-startup-id /home/szalik/scripts/urxvt-tango.sh
+bindsym $mod+Shift+Return exec --no-startup-id /home/szalik/bin/urxvt-tango.sh
 
 bindsym $mod+apostrophe exec --no-startup-id gnome-terminal
 bindsym $mod+Shift+apostrophe exec --no-startup-id gnome-terminal --profile=Tango
@@ -69,8 +69,6 @@ workspace 6 output $external_screen
 workspace 7 output $external_screen
 workspace 8 output $external_screen
 workspace 9 output $external_screen
-
-workspace_auto_back_and_forth yes
 
 bindsym $mod+comma focus output left
 bindsym $mod+period focus output right
@@ -136,11 +134,11 @@ bar {
 bindsym $mod+c exec chromium
 bindsym $mod+b exec --no-startup-id sleep 0.25 && xset dpms force off
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 5+ unmute
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 5- unmute
-bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -q set Master 2+ unmute; killall -USR1 i3status"
+bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -q set Master 2- unmute; killall -USR1 i3status"
+bindsym XF86AudioMute exec --no-startup-id "amixer -q set Master toggle; killall -USR1 i3status"
 
-bindsym XF86Display exec --no-startup-id /home/szalik/scripts/toggle-display-port.sh $internal_screen $external_screen
+bindsym XF86Display exec --no-startup-id /home/szalik/bin/toggle-display-port.sh $internal_screen $external_screen
 
 bindsym XF86ScreenSaver exec --no-startup-id i3lock -i ~/.theme/wallpaper-1600x900.png -c 222222
 

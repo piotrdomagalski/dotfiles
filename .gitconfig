@@ -7,3 +7,9 @@
 	rmdir = true
 [push]
 	default = simple
+[giggle]
+	main-window-maximized = false
+	main-window-geometry = 1918x1180+1600+0
+	main-window-view = HistoryView
+	history-view-vpane-position = 855
+	file-view-vpane-position = 1037

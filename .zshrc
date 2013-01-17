@@ -52,9 +52,9 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/boost/lib
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
 
-export PATH=$HOME/scripts:$PATH
+export PATH=$HOME/bin:$PATH
 
-export CHROMIUM_USER_FLAGS="--password-store=gnome --ignore-gpu-blacklist"
+export CHROMIUM_USER_FLAGS="--password-store=gnome --ignore-gpu-blacklist --ppapi-flash-path=/usr/lib/PepperFlash/libpepflashplayer.so --ppapi-flash-version=11.5.31.101"
 
 # Speed up VirtualGL buffer reading
 export VGL_READBACK=PBO
@@ -63,3 +63,5 @@ export VGL_READBACK=PBO
 #export VIRTUALENVWRAPPER_VIRTUALENV=virtualenv2
 #export PROJECT_HOME=$HOME/wrk/py
 #. /usr/bin/virtualenvwrapper.sh
+#
+alias serve='python -m http.server'
