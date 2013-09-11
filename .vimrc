@@ -68,3 +68,12 @@ set noerrorbells visualbell t_vb=
 if has('autocmd')
 	autocmd GUIEnter * set visualbell t_vb=
 endif
+
+set tabstop=4
+set sw=4
+set expandtab
+set autoindent
+set smarttab
+set formatoptions=croql
+
+let g:flake8_cmd="/usr/bin/flake8-python2"

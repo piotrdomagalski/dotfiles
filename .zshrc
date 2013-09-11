@@ -43,25 +43,11 @@ alias ve='vim ~/.vimrc'
 alias m='make'
 alias m3='make -j3'
 
-export OSG_DIR=/usr/local/OpenSceneGraph-svn
-export PATH=$PATH:/usr/local/OpenSceneGraph-svn/bin
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/OpenSceneGraph-svn/lib64
-
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/boost/lib
-
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
 
-export PATH=$HOME/bin:$PATH
+export PATH=$HOME/bin:$HOME/bin/i3/bin:$PATH
 
 export CHROMIUM_USER_FLAGS="--password-store=gnome --ignore-gpu-blacklist --ppapi-flash-path=/usr/lib/PepperFlash/libpepflashplayer.so --ppapi-flash-version=11.5.31.101"
 
-# Speed up VirtualGL buffer reading
-export VGL_READBACK=PBO
-
-#export WORKON_HOME=$HOME/.virtualenvs
-#export VIRTUALENVWRAPPER_VIRTUALENV=virtualenv2
-#export PROJECT_HOME=$HOME/wrk/py
-#. /usr/bin/virtualenvwrapper.sh
-#
 alias serve='python -m http.server'

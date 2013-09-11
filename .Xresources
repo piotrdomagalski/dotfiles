@@ -20,6 +20,9 @@ URxvt.font:			xft:Inconsolata:pixelsize=16
 URxvt.boldFont:			xft:Inconsolata:pixelsize=16
 URxvt.fading:			0
 
+! To make it work with compton.
+URxvt*buffered: false
+
 ! Unbreak zsh keys in urxvt.
 URxvt.keysym.Home:		\033[1~
 URxvt.keysym.End:		\033[4~

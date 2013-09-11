@@ -8,13 +8,13 @@ font xft:Inconsolata 10
 floating_modifier $mod
 
 bindsym $mod+Return exec --no-startup-id urxvt
+#bindsym $mod+Return exec --no-startup-id gnome-terminal
 bindsym $mod+Shift+Return exec --no-startup-id /home/szalik/bin/urxvt-tango.sh
 
 bindsym $mod+apostrophe exec --no-startup-id gnome-terminal
 bindsym $mod+Shift+apostrophe exec --no-startup-id gnome-terminal --profile=Tango
 
 bindsym $mod+d exec --no-startup-id dmenu_run -p "Run: "
-bindsym $mod+Shift+d exec --no-startup-id ~/.i3/winmenu.py
 
 bindsym $mod+Shift+q kill
 
@@ -88,7 +88,6 @@ bindsym $mod+9 workspace 9
 
 bindsym $mod+Shift+0 move scratchpad
 bindsym $mod+0 scratchpad show
-bindsym $mod+o exec --no-startup-id ~/.i3/scratcher.py
 
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
@@ -102,13 +101,13 @@ bindsym $mod+Shift+9 move container to workspace 9
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exit
+bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'Really exit?' -b 'Yes, exit i3' 'i3-msg exit'"
 
 mode "resize" {
-        bindsym j           resize shrink width 10 px or 10 ppt
-        bindsym k           resize grow height 10 px or 10 ppt
-        bindsym l           resize shrink height 10 px or 10 ppt
-        bindsym semicolon   resize grow width 10 px or 10 ppt
+        bindsym h           resize shrink width 10 px or 10 ppt
+        bindsym j           resize grow height 10 px or 10 ppt
+        bindsym k           resize shrink height 10 px or 10 ppt
+        bindsym la          resize grow width 10 px or 10 ppt
 
         bindsym Left        resize shrink width 10 px or 10 ppt
         bindsym Down        resize grow height 10 px or 10 ppt
@@ -122,13 +121,13 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bar {
-	tray_output $internal_screen
-        status_command i3status
-	font xft:Inconsolata 9
-	colors {
-		background #000000
-		statusline #93a1a1
-	}
+    tray_output $internal_screen
+    status_command i3status
+    font xft:Inconsolata 9
+    colors {
+        background #000000
+        statusline #93a1a1
+    }
 }
 
 bindsym $mod+c exec chromium
@@ -139,8 +138,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -q set Master 2- unmut
 bindsym XF86AudioMute exec --no-startup-id "amixer -q set Master toggle; killall -USR1 i3status"
 
 bindsym XF86Display exec --no-startup-id /home/szalik/bin/toggle-display-port.sh $internal_screen $external_screen
-
-bindsym XF86ScreenSaver exec --no-startup-id i3lock -i ~/.theme/wallpaper-1600x900.png -c 222222
+bindsym XF86ScreenSaver exec --no-startup-id i3lock.sh
 
 new_window 1pixel
 focus_follows_mouse no
@@ -149,7 +147,6 @@ for_window [class="^Pidgin$" window_role="^buddy_list$"] floating enable
 for_window [class="^Skype$"] floating enable
 
 # class                 border  backgr. text    indicator
-# TODO check
 client.focused          #859900 #859900 #ffffff #859900
 #client.focused_inactive #333333 #5f676a #ffffff #484e50
 #client.unfocused        #333333 #222222 #ffffff #292d2e
@@ -157,8 +154,7 @@ client.focused          #859900 #859900 #ffffff #859900
 
 ipc-socket ~/.i3-socket
 
-exec --no-startup-id wmname LG3D
-
 # Autostart
+#exec --no-startup-id wmname LG3D
 exec --no-startup-id nm-applet
 exec --no-startup-id i3 focus output left

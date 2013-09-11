@@ -13,3 +13,5 @@
 	main-window-view = HistoryView
 	history-view-vpane-position = 855
 	file-view-vpane-position = 1037
+[core]
+	autocrlf = input
